@@ -53,5 +53,11 @@ about:
   dev_url: https://github.com/equinor/segyio
 
 extra:
+  # extra info:
+  anaconda-services:
+    comment: "Built for customer"
+    recipe_maintainers:
+      - bkreider
   recipe-maintainers:
     - jokva
+ 
