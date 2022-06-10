@@ -21,7 +21,7 @@ requirements:
     - make  # [unix]
     - ninja  # [win]
   host:
-    - python
+    - python <3.10
     - pip
     - setuptools
     - setuptools_scm
@@ -30,7 +30,7 @@ requirements:
     - numpy
     - scikit-build
   run:
-    - python
+    - python <3.10
     - numpy
 
 test:
