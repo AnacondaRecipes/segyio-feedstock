@@ -49,10 +49,12 @@ about:
     segyio is a fast and practical library for reading and writing seismic data
     in SEG-Y format. segyio is random access oriented for modern computers with
     simple read/write primitives on lines.
-  doc_url: http://segyio.readthedocs.io/
+  doc_url: https://segyio.readthedocs.io/
   dev_url: https://github.com/equinor/segyio
 
 extra:
+  skip-lints:
+    - host_section_needs_exact_pinnings
   # extra info:
   anaconda-services:
     comment: "Built for customer"
