@@ -8,6 +8,7 @@ package:
 source:
   url: https://github.com/equinor/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 79f1baa969deb613870c812655544af0c61370ffba3731f7f59836949495dd81
+
   patches:                        # [win]
     - win_setuptools_patch.patch  # [win]
 
@@ -22,7 +23,7 @@ requirements:
     - cmake
     - make  # [unix]
     - ninja  # [win]
-    - patch  # [win]
+    - m2-patch  # [win]
 
     # version 72 removed the test command
     - setuptools <=71
