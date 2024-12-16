@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/equinor/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 79f1baa969deb613870c812655544af0c61370ffba3731f7f59836949495dd81
+  patches:                        # [win]
+    - win_setuptools_patch.patch  # [win]
 
 build:
   number: 2
@@ -20,18 +22,27 @@ requirements:
     - cmake
     - make  # [unix]
     - ninja  # [win]
+    - patch  # [win]
+
+    # version 72 removed the test command
+    - setuptools <=71
   host:
     - python
     - pip
-    - setuptools
+
+    # version 72 removed the test command
+    - setuptools <=71
     - setuptools_scm
     - pytest
     - pytest-runner
     - numpy
     - scikit-build
+
   run:
     - python
     - numpy
+    # version 72 removed the test command
+    - setuptools <=71
 
 test:
   imports:

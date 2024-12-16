@@ -1,0 +1,21 @@
+--- python/setup.py	2024-12-16 18:03:01
++++ python/setup.py.new	2024-12-16 18:02:29
+@@ -3,6 +3,8 @@
+ import skbuild
+ import setuptools
+ 
++from setuptools.command import test
++
+ long_description = """
+ =======
+ SEGY IO
+@@ -95,7 +97,7 @@
+         # supported OS X release 10.9
+         '-DCMAKE_OSX_DEPLOYMENT_TARGET=10.9',
+     ],
+-    cmdclass = { 'test': setuptools.command.test.test },
++    cmdclass = { 'test': test.test },
+     classifiers = [
+         'Development Status :: 5 - Production/Stable',
+         'Environment :: Other Environment',
+
