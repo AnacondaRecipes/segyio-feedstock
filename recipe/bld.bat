@@ -1,3 +1,5 @@
+@echo on
+
 cmake -G"Ninja" ^
       -DCMAKE_BUILD_TYPE=Release ^
       -DCMAKE_PREFIX_PATH=%PREFIX% ^
@@ -12,6 +14,6 @@ cmake --build . --config Release --target install
 if errorlevel 1 exit 1
 
 cd python
-%PYTHON% -m pip install .
+%PYTHON% -m pip install --no-deps --ignore-installed .
 
 if errorlevel 1 exit 1
